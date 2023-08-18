@@ -53,6 +53,9 @@ public class TestAPITMDB {
                 .post(endpoint("/3/movie/569094/rating"))
                 .then()
                 .statusCode(201)
+                .body("success", equalTo(true) )
+                .body("status_message", equalTo("The item/record was updated successfully."))
+                .body("status_code", equalTo(12))
                 .log().all();
     }
 
